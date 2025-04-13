@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "orders": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/order"
+      }
+    }
+  },
+  "required": ["orders"],
+  "definitions": {
+    "order": {
+      "type": "object",
+      "required": ["title", "customer", "processId", "assignee", "startDate", "endDate"],
+      "properties": {
+        "customer": {
+          "type": "object",
+          "required": ["name", "department", "emailAddress"],
+          "properties": {
+            "id": { 
+              "type": "string",
+              "pattern": "^CUST\\d{3}$",
+              "errorMessage": "ID must be in format CUST followed by 3 digits"
+            },
+            "name": { 
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 50,
+              "errorMessage": "Name must be between 3 and 50 characters"
+            },
+            "department": { 
+              "type": "string",
+              "minLength": 2,
+              "errorMessage": "Department name is required"
+            },
+            "emailAddress": { 
+              "type": "string", 
+              "format": "email",
+              "errorMessage": "Please enter a valid email address"
+            }
+          }
+        },
+        "title": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 100,
+          "errorMessage": "Title must be between 5 and 100 characters"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "ordered": { 
+          "type": "boolean",
+          "default": false
+        },
+        "processId": {
+          "type": "number",
+          "minimum": 1000000000,
+          "maximum": 9999999999,
+          "errorMessage": "Process ID must be a 10-digit number"
+        },
+        "assignee": { 
+          "type": "string",
+          "minLength": 3,
+          "errorMessage": "Assignee name is required (min 3 characters)"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date",
+          "errorMessage": "Please enter a valid start date"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date",
+          "errorMessage": "Please enter a valid end date"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["unordered", "planned", "ordered"],
+          "default": "unordered"
+        },
+        "amount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 10,
+          "multipleOf": 1
+        }
+      }
+    }
+  }
+}

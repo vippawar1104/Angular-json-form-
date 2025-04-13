@@ -1,0 +1,44 @@
+:host {
+  @apply flex justify-center items-center min-h-screen bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-gray-800 dark:to-gray-900;
+}
+
+form {
+  @apply bg-blue-50 dark:bg-gray-800 dark:text-white shadow-2xl rounded-2xl p-10 w-full max-w-2xl transition-all duration-300;
+}
+
+label {
+  @apply block text-gray-900 dark:text-gray-200 font-semibold mb-2;
+}
+
+input, select, textarea {
+  @apply w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-400 bg-white dark:bg-gray-700 text-gray-950 dark:text-gray-100 transition duration-200;
+}
+
+button {
+  @apply bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg mt-6 shadow-md transition duration-300;
+}
+
+.section {
+  @apply bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md mb-6;
+}
+
+.section-title {
+  @apply text-lg font-semibold text-gray-950 dark:text-gray-100 mb-4;
+}
+
+.data-box {
+  @apply bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded p-4 text-sm text-gray-900 dark:text-gray-100;
+}
+
+/* Fix for status dropdown */
+::ng-deep .mat-mdc-form-field {
+  @apply relative z-50;
+}
+
+::ng-deep .mat-mdc-select-panel {
+  @apply z-[1000] !important;
+}
+
+::ng-deep .vertical-layout-item {
+  @apply mb-8;
+}
