@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "required": ["personalInfo", "employmentDetails"],
+  "properties": {
+    "personalInfo": {
+      "type": "object",
+      "required": ["firstName", "lastName", "email", "phone"],
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "minLength": 2,
+          "errorMessage": "First name is required (min 2 characters)"
+        },
+        "lastName": {
+          "type": "string",
+          "minLength": 2,
+          "errorMessage": "Last name is required (min 2 characters)"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "errorMessage": "Please enter a valid email address"
+        },
+        "phone": {
+          "type": "string",
+          "pattern": "^\\+?[1-9]\\d{1,14}$",
+          "errorMessage": "Please enter a valid phone number"
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "employmentDetails": {
+      "type": "object",
+      "required": ["position", "department", "startDate"],
+      "properties": {
+        "employeeId": {
+          "type": "string",
+          "pattern": "^EMP\\d{5}$",
+          "errorMessage": "Employee ID must be in format EMP followed by 5 digits"
+        },
+        "position": {
+          "type": "string",
+          "enum": ["Developer", "Designer", "Manager", "HR", "Sales"],
+          "default": "Developer"
+        },
+        "department": {
+          "type": "string",
+          "enum": ["Engineering", "Design", "Management", "Human Resources", "Sales"],
+          "default": "Engineering"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "salary": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500000
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string",
+            "enum": ["Beginner", "Intermediate", "Expert"]
+          },
+          "yearsOfExperience": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+} 

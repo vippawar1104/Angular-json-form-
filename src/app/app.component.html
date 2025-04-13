@@ -1,0 +1,34 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col items-center p-6">
+  
+  <div class="flex items-center gap-4 mb-8">
+    <img src="assets/vip.ico" alt="VIP Icon" class="h-12 w-12">
+    <h1 class="text-4xl font-bold !text-black">Angular JSON Forms Project</h1>
+  </div>
+  
+  <div class="mb-6 flex items-center gap-4">
+    <button (click)="switchLayout('orders')" 
+            [class.bg-indigo-600]="currentLayout === 'orders'"
+            [class.bg-gray-400]="currentLayout !== 'orders'"
+            class="px-4 py-2 text-white rounded-lg transition-colors">
+      Orders Layout
+    </button>
+    <button (click)="switchLayout('employee')"
+            [class.bg-indigo-600]="currentLayout === 'employee'"
+            [class.bg-gray-400]="currentLayout !== 'employee'"
+            class="px-4 py-2 text-white rounded-lg transition-colors">
+      Employee Layout
+    </button>
+  </div>
+
+  <div class="w-full max-w-3xl bg-white rounded-xl shadow-lg p-8">
+    <jsonforms
+      [data]="data"
+      [schema]="currentSchema"
+      [uischema]="currentUischema"
+      [renderers]="renderers"
+      [i18n]="i18n"
+      [ajv]="ajv"
+      class="text-gray-900"
+    ></jsonforms>
+  </div>
+</div>

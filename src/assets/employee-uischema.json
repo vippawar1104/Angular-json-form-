@@ -1,0 +1,106 @@
+{
+  "type": "Categorization",
+  "elements": [
+    {
+      "type": "Category",
+      "label": "Personal Information",
+      "elements": [
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "HorizontalLayout",
+              "elements": [
+                {
+                  "type": "Control",
+                  "scope": "#/properties/personalInfo/properties/firstName"
+                },
+                {
+                  "type": "Control",
+                  "scope": "#/properties/personalInfo/properties/lastName"
+                }
+              ]
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/personalInfo/properties/email"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/personalInfo/properties/phone"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/personalInfo/properties/dateOfBirth"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Category",
+      "label": "Employment",
+      "elements": [
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/employmentDetails/properties/employeeId"
+            },
+            {
+              "type": "HorizontalLayout",
+              "elements": [
+                {
+                  "type": "Control",
+                  "scope": "#/properties/employmentDetails/properties/position"
+                },
+                {
+                  "type": "Control",
+                  "scope": "#/properties/employmentDetails/properties/department"
+                }
+              ]
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/employmentDetails/properties/startDate"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/employmentDetails/properties/salary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Category",
+      "label": "Skills",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/skills",
+          "options": {
+            "detail": {
+              "type": "VerticalLayout",
+              "elements": [
+                {
+                  "type": "Control",
+                  "scope": "#/properties/name"
+                },
+                {
+                  "type": "Control",
+                  "scope": "#/properties/level"
+                },
+                {
+                  "type": "Control",
+                  "scope": "#/properties/yearsOfExperience"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+} 
